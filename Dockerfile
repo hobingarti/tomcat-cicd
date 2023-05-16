@@ -25,8 +25,8 @@ RUN chmod g+r /opt/tomcat/bin/*
 RUN rm -rf /opt/tomcat/webapps/*
 RUN rm -rf /tmp/*
 RUN cd /tmp && git clone https://github.com/hobingarti/java-hello-sample.git
-RUN cd /tmp/java-mvn-hello-world-web-app && mvn clean install
-RUN cp /tmp/java-mvn-hello-world-web-app/target/mvn-hello-world.war /opt/tomcat/webapps/ROOT.war
+RUN cd /tmp/java-hello-sample && mvn clean install
+RUN cp /tmp/java-hello-sample/target/mvn-hello-world.war /opt/tomcat/webapps/ROOT.war
 RUN chmod 777 /opt/tomcat/webapps/ROOT.war
 
 VOLUME /opt/tomcat/webapps
